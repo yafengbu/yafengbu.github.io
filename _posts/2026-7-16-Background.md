@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Back"
+title: "Background"
 ---
 
 今天一系列特定的环境刺激，变得很怀旧，把这个地方重新捡起来了。

@@ -359,7 +359,7 @@ html[data-theme="light"] .tt-moon { color: var(--muted); opacity: 0.6; }
 
 .hero-meta { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 18px; font-size: 13px; color: var(--muted); }
 .meta-item { display: inline-flex; align-items: center; gap: 7px; }
-.meta-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent-2); box-shadow: 0 0 6px rgba(34, 211, 238, 0.8); }
+.meta-icon { width: 14px; height: 14px; flex: none; color: var(--accent-2); filter: drop-shadow(0 0 5px rgba(34, 211, 238, 0.55)); }
 .hero-meta a { color: var(--muted); }
 .hero-meta a:hover { color: var(--accent-strong); }
 

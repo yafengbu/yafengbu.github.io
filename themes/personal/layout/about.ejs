@@ -19,9 +19,9 @@
       <div class="hero-name"><%= p.name %><span class="hero-en"><%= config.subtitle || p.en_name %></span></div>
       <div class="hero-role"><%= p.role %></div>
       <div class="hero-meta">
-        <span class="meta-item"><span class="meta-dot"></span><%= p.location %></span>
-        <% if (p.email) { %><span class="meta-item"><span class="meta-dot"></span><a href="mailto:<%= p.email %>"><%= p.email %></a></span><% } %>
-        <% if (p.github) { %><span class="meta-item"><span class="meta-dot"></span><a href="<%= p.github %>" target="_blank" rel="noopener">GitHub</a></span><% } %>
+        <span class="meta-item"><%- include('partials/meta-icon', { name: 'pin' }) %><%= p.location %></span>
+        <% if (p.email) { %><span class="meta-item"><%- include('partials/meta-icon', { name: 'mail' }) %><a href="mailto:<%= p.email %>"><%= p.email %></a></span><% } %>
+        <% if (p.github) { %><span class="meta-item"><%- include('partials/meta-icon', { name: 'github' }) %><a href="<%= p.github %>" target="_blank" rel="noopener">GitHub</a></span><% } %>
       </div>
     </div>
   </div>

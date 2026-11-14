@@ -8,7 +8,9 @@
       <a href="<%- url_for('/') %>" class="<%= is_home() ? 'active' : '' %>">首页</a>
       <a href="<%- url_for('/blog/') %>" class="<%= is_current('/blog/') || page.layout === 'post' ? 'active' : '' %>">博客</a>
       <a href="<%- url_for('/works/') %>" class="<%= is_current('/works/') ? 'active' : '' %>">作品</a>
+      <% if ((site.data.profile || {}).show_resume) { %>
       <a href="<%- url_for('/resume/') %>" target="_blank" rel="noopener" class="nav-external">简历<span class="nav-ext-mark">↗</span></a>
+      <% } %>
       <a href="<%- url_for('/reading/') %>" class="<%= is_current('/reading/') ? 'active' : '' %>">阅读</a>
       <a href="<%- url_for('/about/') %>" class="<%= is_current('/about/') ? 'active' : '' %>">关于</a>
     </nav>

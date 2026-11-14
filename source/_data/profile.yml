@@ -9,6 +9,8 @@ location: 深圳
 email: your-email@example.com
 github: https://github.com/yourname
 resume: /resume.pdf
+# 是否在站内展示简历入口（导航 + 首页按钮）；页面本身仍保留，可直连 /resume/ 访问
+show_resume: false
 
 # 首页一句话自我介绍
 intro: >-

@@ -22,7 +22,7 @@
       <p class="hero-intro"><%- p.intro %></p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="<%- url_for('/works/') %>">查看作品</a>
-        <a class="btn btn-ghost" href="<%- url_for('/resume/') %>" target="_blank" rel="noopener">我的简历 ↗</a>
+        <% if (p.show_resume) { %><a class="btn btn-ghost" href="<%- url_for('/resume/') %>" target="_blank" rel="noopener">我的简历 ↗</a><% } %>
         <a class="btn btn-ghost" href="<%- url_for('/blog/') %>">读博客</a>
         <% if (p.email) { %><a class="btn btn-ghost" href="mailto:<%= p.email %>">联系我</a><% } %>
       </div>

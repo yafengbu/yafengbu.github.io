@@ -17,7 +17,7 @@
       <span class="hero-avatar-ring" aria-hidden="true"></span>
     </div>
     <div class="hero-body">
-      <div class="hero-name"><%= p.name %><span class="hero-en"><%= p.en_name %></span></div>
+      <div class="hero-name"><%= p.name %><span class="hero-en"><%= config.subtitle || p.en_name %></span></div>
       <div class="hero-role"><%= p.role %></div>
       <p class="hero-intro"><%- p.intro %></p>
       <div class="hero-actions">

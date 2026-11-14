@@ -994,10 +994,36 @@ html[data-theme="light"]:not(.rs-page) .ts-opt.is-active .ts-ico { filter: none;
 /* ---------- Hero ---------- */
 
 html[data-theme="light"]:not(.rs-page) .hero {
-  background:
+  /* background:
     linear-gradient(180deg, rgba(246, 249, 253, 0.80) 0%, rgba(246, 249, 253, 0.92) 58%, var(--bg) 100%),
-    url("../images/hero-bg.jpg") center 42% / cover no-repeat;
+    url("../images/hero-bg.jpg") center 42% / cover no-repeat; */
+  background: linear-gradient(180deg, #f9fbff 0%, var(--bg) 100%);
   border-bottom-color: rgba(24, 62, 122, 0.12);
+  isolation: isolate;
+}
+/* 反相 + 色相翻转：深色星云 → 浅色星云，保留纹理层次 */
+html[data-theme="light"]:not(.rs-page) .hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: url("../images/hero-bg.jpg") center 42% / cover no-repeat;
+  filter: invert(1) hue-rotate(180deg) saturate(0.6) brightness(1.04) contrast(1.06);
+  opacity: 0.62;
+  pointer-events: none;
+}
+/* 白雾：底部渐隐入底色，同时压住对比度保证正文可读 */
+html[data-theme="light"]:not(.rs-page) .hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg,
+    rgba(249, 251, 255, 0.30) 0%,
+    rgba(249, 251, 255, 0.42) 50%,
+    rgba(246, 249, 253, 0.86) 82%,
+    var(--bg) 100%);
+  pointer-events: none;
 }
 html[data-theme="light"]:not(.rs-page) .hero-glow {
   background: radial-gradient(circle, rgba(28, 111, 214, 0.14) 0%, rgba(28, 111, 214, 0) 70%);

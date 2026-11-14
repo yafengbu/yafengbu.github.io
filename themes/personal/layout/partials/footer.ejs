@@ -1,0 +1,12 @@
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© <%= date(new Date(), 'YYYY') %> <%= site.data.profile.name || config.author %></span>
+    <span class="dot">·</span>
+    <span>Built with <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a></span>
+    <% if (site.data.profile.github) { %>
+    <span class="dot">·</span>
+    <a href="<%= site.data.profile.github %>" target="_blank" rel="noopener">GitHub</a>
+    <% } %>
+  </div>
+</footer>
+<script src="<%- url_for('/js/theme.js') %>"></script>

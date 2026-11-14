@@ -1,0 +1,87 @@
+<%
+  const p = site.data.profile || {};
+  const featured = (site.data.works || []).filter(function (w) { return w.featured; });
+  const books = (site.data.reading || []).slice(0, 4);
+  const posts = site.posts.sort('-date').limit(5);
+%>
+
+<section class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-avatar-wrap">
+      <% if (p.avatar) { %>
+      <img class="hero-avatar" src="<%- url_for(p.avatar_home || p.avatar) %>" alt="<%= p.name %>">
+      <% } else { %>
+      <div class="hero-avatar hero-avatar-fallback"><%= (p.name || 'B').charAt(0) %></div>
+      <% } %>
+      <span class="hero-avatar-ring" aria-hidden="true"></span>
+    </div>
+    <div class="hero-body">
+      <div class="hero-name"><%= p.name %><span class="hero-en"><%= p.en_name %></span></div>
+      <div class="hero-role"><%= p.role %></div>
+      <p class="hero-intro"><%- p.intro %></p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="<%- url_for('/works/') %>">查看作品</a>
+        <a class="btn btn-ghost" href="<%- url_for('/resume/') %>" target="_blank" rel="noopener">我的简历 ↗</a>
+        <a class="btn btn-ghost" href="<%- url_for('/blog/') %>">读博客</a>
+        <% if (p.email) { %><a class="btn btn-ghost" href="mailto:<%= p.email %>">联系我</a><% } %>
+      </div>
+      <div class="hero-meta">
+        <span class="meta-item"><span class="meta-dot"></span><%= p.location %></span>
+        <% if (p.email) { %><span class="meta-item"><span class="meta-dot"></span><a href="mailto:<%= p.email %>"><%= p.email %></a></span><% } %>
+        <% if (p.github) { %><span class="meta-item"><span class="meta-dot"></span><a href="<%= p.github %>" target="_blank" rel="noopener">GitHub</a></span><% } %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% if (p.now && p.now.length) { %>
+<section class="now">
+  <% p.now.forEach(function (n) { %>
+  <div class="now-item"><span class="now-label"><%= n.label %></span><span class="now-text"><%- n.text %></span></div>
+  <% }); %>
+</section>
+<% } %>
+
+<section class="section">
+  <div class="section-head">
+    <h2 class="section-title">精选作品<span class="section-en">Works</span></h2>
+    <a class="section-more" href="<%- url_for('/works/') %>">全部作品<span class="arrow">→</span></a>
+  </div>
+  <div class="card-grid">
+    <% featured.forEach(function (w) { %>
+    <%- partial('partials/work-card', { work: w }) %>
+    <% }); %>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2 class="section-title">最近阅读<span class="section-en">Reading</span></h2>
+    <a class="section-more" href="<%- url_for('/reading/') %>">完整书单<span class="arrow">→</span></a>
+  </div>
+  <ul class="reading-list">
+    <% books.forEach(function (b, i) { %>
+    <li class="reading-item" style="--i:<%= i %>">
+      <span class="reading-status status-<%= b.status === '在读' ? 'reading' : (b.status === '想读' ? 'todo' : 'done') %>"><%= b.status %></span>
+      <span class="reading-title"><%= b.title %></span>
+      <span class="reading-author"><%= b.author %></span>
+    </li>
+    <% }); %>
+  </ul>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2 class="section-title">最新文章<span class="section-en">Writing</span></h2>
+    <a class="section-more" href="<%- url_for('/blog/') %>">全部文章<span class="arrow">→</span></a>
+  </div>
+  <ul class="post-list">
+    <% posts.forEach(function (post) { %>
+    <li class="post-item">
+      <a class="post-link" href="<%- url_for(post.path) %>"><span class="post-bullet"></span><%= post.title %></a>
+      <time class="post-date"><%= date(post.date, 'YYYY-MM-DD') %></time>
+    </li>
+    <% }); %>
+  </ul>
+</section>

@@ -1,0 +1,35 @@
+<section class="page-head">
+  <h1 class="page-title"><%= page.title %></h1>
+  <p class="page-subtitle"><%= page.subtitle || '记录 AI 应用与 Agent 开发中的实践、踩坑与思考' %></p>
+</section>
+
+<% if (page.content) { %><div class="page-body"><%- page.content %></div><% } %>
+
+<%
+  const posts = site.posts.sort('-date');
+  const years = {};
+  posts.forEach(function (post) {
+    const y = date(post.date, 'YYYY');
+    (years[y] = years[y] || []).push(post);
+  });
+%>
+
+<% Object.keys(years).sort().reverse().forEach(function (y) { %>
+<section class="section">
+  <div class="section-head">
+    <h2 class="section-title"><%= y %><span class="section-en">Archive</span></h2>
+    <span class="section-count"><%= years[y].length %> 篇</span>
+  </div>
+  <ul class="post-list">
+    <% years[y].forEach(function (post) { %>
+    <li class="post-item post-item-rich">
+      <div class="post-item-main">
+        <a class="post-link" href="<%- url_for(post.path) %>"><%= post.title %></a>
+        <p class="post-excerpt"><%= strip_html(post.excerpt || post.content).substring(0, 80) %></p>
+      </div>
+      <time class="post-date"><%= date(post.date, 'MM-DD') %></time>
+    </li>
+    <% }); %>
+  </ul>
+</section>
+<% }); %>

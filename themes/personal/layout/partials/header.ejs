@@ -1,0 +1,27 @@
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="<%- url_for('/') %>">
+      <span class="brand-name"><%= site.data.profile.name || config.author %></span>
+      <span class="brand-sub">Personal Site</span>
+    </a>
+    <nav class="nav">
+      <a href="<%- url_for('/') %>" class="<%= is_home() ? 'active' : '' %>">首页</a>
+      <a href="<%- url_for('/blog/') %>" class="<%= is_current('/blog/') || page.layout === 'post' ? 'active' : '' %>">博客</a>
+      <a href="<%- url_for('/works/') %>" class="<%= is_current('/works/') ? 'active' : '' %>">作品</a>
+      <a href="<%- url_for('/resume/') %>" target="_blank" rel="noopener" class="nav-external">简历<span class="nav-ext-mark">↗</span></a>
+      <a href="<%- url_for('/reading/') %>" class="<%= is_current('/reading/') ? 'active' : '' %>">阅读</a>
+      <a href="<%- url_for('/about/') %>" class="<%= is_current('/about/') ? 'active' : '' %>">关于</a>
+    </nav>
+    <button type="button" class="theme-toggle" data-theme-toggle role="switch" aria-checked="false"
+            aria-label="切换白日 / 夜间模式" title="跟随系统外观 · 点击切换">
+      <span class="tt-thumb" aria-hidden="true"></span>
+      <svg class="tt-ico tt-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/>
+      </svg>
+      <svg class="tt-ico tt-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 12.9A8.6 8.6 0 1 1 11.1 3a6.9 6.9 0 0 0 9.9 9.9z"/>
+      </svg>
+    </button>
+  </div>
+</header>

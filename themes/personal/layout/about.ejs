@@ -1,0 +1,72 @@
+<%
+  const p = site.data.profile || {};
+  const skills = p.skills || [];
+  const timeline = p.timeline || [];
+%>
+
+<section class="hero hero-compact">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-avatar-wrap">
+      <% if (p.avatar) { %>
+      <img class="hero-avatar" src="<%- url_for(p.avatar) %>" alt="<%= p.name %>">
+      <% } else { %>
+      <div class="hero-avatar hero-avatar-fallback"><%= (p.name || 'B').charAt(0) %></div>
+      <% } %>
+      <span class="hero-avatar-ring" aria-hidden="true"></span>
+    </div>
+    <div class="hero-body">
+      <div class="hero-name"><%= p.name %><span class="hero-en"><%= p.en_name %></span></div>
+      <div class="hero-role"><%= p.role %></div>
+      <div class="hero-meta">
+        <span class="meta-item"><span class="meta-dot"></span><%= p.location %></span>
+        <% if (p.email) { %><span class="meta-item"><span class="meta-dot"></span><a href="mailto:<%= p.email %>"><%= p.email %></a></span><% } %>
+        <% if (p.github) { %><span class="meta-item"><span class="meta-dot"></span><a href="<%= p.github %>" target="_blank" rel="noopener">GitHub</a></span><% } %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-body article-body">
+  <%- page.content %>
+</section>
+
+<% if (skills.length) { %>
+<section class="section">
+  <div class="section-head">
+    <h2 class="section-title">技能<span class="section-en">Skills</span></h2>
+  </div>
+  <div class="skill-grid">
+    <% skills.forEach(function (s) { %>
+    <div class="skill-group">
+      <div class="skill-group-name"><%= s.group %></div>
+      <div class="skill-items">
+        <% (s.items || []).forEach(function (i) { %><span class="pill"><%= i %></span><% }); %>
+      </div>
+    </div>
+    <% }); %>
+  </div>
+</section>
+<% } %>
+
+<% if (timeline.length) { %>
+<section class="section">
+  <div class="section-head">
+    <h2 class="section-title">工作经历<span class="section-en">Experience</span></h2>
+  </div>
+  <ul class="timeline">
+    <% timeline.forEach(function (t) { %>
+    <li class="timeline-item">
+      <div class="timeline-rail"><span class="timeline-dot"></span></div>
+      <div class="timeline-period"><%= t.period %></div>
+      <div class="timeline-main">
+        <div class="timeline-company"><%= t.company %></div>
+        <% if (t.dept) { %><div class="timeline-dept"><%= t.dept %></div><% } %>
+        <% if (t.desc) { %><p class="timeline-desc"><%= t.desc %></p><% } %>
+      </div>
+      <div class="timeline-role"><%= t.role %></div>
+    </li>
+    <% }); %>
+  </ul>
+</section>
+<% } %>

@@ -1,0 +1,40 @@
+<section class="page-head">
+  <h1 class="page-title"><%= page.title %></h1>
+  <p class="page-subtitle"><%= page.subtitle || '读书是最低成本的系统升级' %></p>
+</section>
+
+<% if (page.content) { %><section class="page-body"><%- page.content %></section><% } %>
+
+<%
+  const books = site.data.reading || [];
+  const groups = [
+    { key: '在读', cls: 'reading' },
+    { key: '想读', cls: 'todo' },
+    { key: '已读', cls: 'done' }
+  ];
+%>
+
+<% groups.forEach(function (g) {
+     const list = books.filter(function (b) { return b.status === g.key; });
+     if (!list.length) return;
+%>
+<section class="section">
+  <div class="section-head">
+    <h2 class="section-title"><%= g.key %><span class="section-en"><%= g.key === '在读' ? 'Reading Now' : (g.key === '想读' ? 'To Read' : 'Finished') %></span></h2>
+    <span class="section-count"><%= list.length %> 本</span>
+  </div>
+  <ul class="book-list">
+    <% list.forEach(function (b) { %>
+    <li class="book-item">
+      <div class="book-head">
+        <span class="reading-status status-<%= g.cls %>"><%= b.status %></span>
+        <span class="book-title"><% if (b.link) { %><a href="<%= b.link %>" target="_blank" rel="noopener"><%= b.title %></a><% } else { %><%= b.title %><% } %></span>
+        <span class="book-author"><%= b.author %></span>
+        <% if (b.category) { %><span class="pill pill-light"><%= b.category %></span><% } %>
+      </div>
+      <% if (b.note) { %><p class="book-note"><%= b.note %></p><% } %>
+    </li>
+    <% }); %>
+  </ul>
+</section>
+<% }); %>

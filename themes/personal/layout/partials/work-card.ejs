@@ -1,0 +1,13 @@
+<article class="work-card">
+  <div class="work-head">
+    <h3 class="work-title"><%= work.title %></h3>
+    <% if (work.period) { %><span class="work-period"><%= work.period %></span><% } %>
+  </div>
+  <% if (work.role) { %><div class="role-tag"><%= work.role %></div><% } %>
+  <p class="work-summary"><%= work.summary %></p>
+  <% if (work.highlight) { %><p class="work-highlight"><%= work.highlight %></p><% } %>
+  <div class="work-foot">
+    <% (work.tags || []).forEach(function (t) { %><span class="pill"><%= t %></span><% }); %>
+    <% if (work.link) { %><a class="work-link" href="<%= work.link %>" target="_blank" rel="noopener">查看 →</a><% } %>
+  </div>
+</article>

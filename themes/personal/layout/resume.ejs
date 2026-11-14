@@ -1,0 +1,257 @@
+<% const r = site.data.resume || {}; const h = r.header || {}; %>
+<% let sec = 0; %>
+
+<div class="rs-bar no-print">
+  <a class="rs-back" href="<%- url_for('/') %>">← 返回网站</a>
+
+  <div class="rs-tools">
+    <label class="rs-field">
+      <span class="rs-field-k">纸张</span>
+      <select id="rs-paper" class="rs-select" aria-label="纸张尺寸">
+        <option value="A4">A4 · 210×297</option>
+        <option value="A3">A3 · 297×420</option>
+        <option value="A5">A5 · 148×210</option>
+        <option value="Letter">Letter · 216×279</option>
+        <option value="Legal">Legal · 216×356</option>
+      </select>
+    </label>
+
+    <label class="rs-field">
+      <span class="rs-field-k">缩放</span>
+      <select id="rs-scale" class="rs-select" aria-label="缩放比例">
+        <option value="0.8">80%</option>
+        <option value="0.9">90%</option>
+        <option value="1" selected>100%</option>
+        <option value="1.1">110%</option>
+        <option value="1.2">120%</option>
+        <option value="1.3">130%</option>
+      </select>
+    </label>
+
+    <label class="rs-field">
+      <span class="rs-field-k">边距</span>
+      <select id="rs-margin" class="rs-select" aria-label="纸张边距">
+        <option value="0">无 · 0 mm</option>
+        <option value="8" selected>标准 · 8 mm</option>
+        <option value="12">宽松 · 12 mm</option>
+        <option value="18">宽 · 18 mm</option>
+      </select>
+    </label>
+
+    <label class="rs-switch" title="页面自带页眉页脚，不依赖浏览器打印选项">
+      <input type="checkbox" id="rs-hf" checked>
+      <span>页眉页脚</span>
+    </label>
+
+    <button id="rs-print" class="rs-print" type="button">打印 / 保存为 PDF</button>
+  </div>
+</div>
+
+<article class="rs-paper">
+  <table class="rs-sheet">
+  <thead class="rs-run rs-run-top"><tr><td>
+    <div class="rs-hf rs-hf-top">
+      <span><%= h.name %> · <%= h.role %></span>
+      <span class="rs-hf-meta"><span class="rs-hf-date"></span></span>
+    </div>
+  </td></tr></thead>
+  <tbody><tr><td>
+
+  <header class="rs-header">
+    <div class="rs-header-left">
+      <h1 class="rs-name"><%= h.name %></h1>
+      <div class="rs-en"><%= h.en_name %></div>
+      <div class="rs-role"><%= h.role %></div>
+      <div class="rs-contact">
+        <span><i>MAIL</i><%= h.email %></span>
+        <span><i>TEL</i><%= h.phone %></span>
+        <span><i>BASE</i><%= h.location %></span>
+      </div>
+    </div>
+    <% if (site.data.profile && site.data.profile.avatar) { %>
+    <img class="rs-avatar" src="<%- url_for(site.data.profile.avatar) %>" alt="<%= h.name %>">
+    <% } %>
+  </header>
+
+  <p class="rs-intent"><span class="rs-intent-key">求职意向</span><%= h.job_intent %><span class="rs-intent-sep">/</span><%= h.years %>经验</p>
+
+  <section class="rs-section">
+    <h2 class="rs-h2"><span class="rs-num"><%= String(++sec).padStart(2, '0') %></span>职业摘要<span class="rs-h2-en">Summary</span></h2>
+    <p class="rs-summary"><%= r.summary %></p>
+    <ul class="rs-highlights">
+      <% (r.highlights || []).forEach(function (it) { %>
+      <li><span class="rs-hl-key"><%= it.key %></span><span class="rs-hl-text"><%= it.text %></span></li>
+      <% }); %>
+    </ul>
+  </section>
+
+  <section class="rs-section">
+    <h2 class="rs-h2"><span class="rs-num"><%= String(++sec).padStart(2, '0') %></span>核心技能<span class="rs-h2-en">Skills</span></h2>
+    <div class="rs-tags">
+      <% (r.skill_tags || '').split('｜').forEach(function (t) { %><span class="rs-tag"><%= t.trim() %></span><% }); %>
+    </div>
+    <ul class="rs-skill-list">
+      <% (r.skills || []).forEach(function (s) { %>
+      <li><span class="rs-skill-key"><%= s.group %></span><span class="rs-skill-text"><%= s.text %></span></li>
+      <% }); %>
+    </ul>
+  </section>
+
+  <section class="rs-section">
+    <h2 class="rs-h2"><span class="rs-num"><%= String(++sec).padStart(2, '0') %></span>工作经历<span class="rs-h2-en">Experience</span></h2>
+    <% (r.experience || []).forEach(function (e) { %>
+    <div class="rs-exp">
+      <div class="rs-exp-top">
+        <span class="rs-period"><%= e.period %></span>
+        <span class="rs-role-chip"><%= e.role %></span>
+      </div>
+      <div class="rs-exp-company"><%= e.company %><% if (e.dept) { %><span class="rs-dept"><%= e.dept %></span><% } %></div>
+      <ul class="rs-list">
+        <% (e.bullets || []).forEach(function (b) { %><li><%= b %></li><% }); %>
+      </ul>
+    </div>
+    <% }); %>
+  </section>
+
+  <section class="rs-section">
+    <h2 class="rs-h2"><span class="rs-num"><%= String(++sec).padStart(2, '0') %></span>项目经验<span class="rs-h2-en">Projects</span></h2>
+    <% (r.project_groups || []).forEach(function (g) { %>
+    <div class="rs-group">
+      <h3 class="rs-group-title"><%= g.group %></h3>
+      <% (g.items || []).forEach(function (p) { %>
+      <div class="rs-proj">
+        <div class="rs-proj-top">
+          <span class="rs-proj-name"><%= p.name %></span>
+          <span class="rs-period"><%= p.period %></span>
+        </div>
+        <div class="rs-proj-meta">
+          <span class="rs-proj-role"><%= p.role %></span>
+          <% if (p.stack) { %><span class="rs-stack"><%= p.stack %></span><% } %>
+        </div>
+        <% if (p.desc) { %><p class="rs-proj-desc"><%= p.desc %></p><% } %>
+        <% if (p.bullets && p.bullets.length) { %>
+        <ul class="rs-list">
+          <% p.bullets.forEach(function (b) { %><li><%= b %></li><% }); %>
+        </ul>
+        <% } %>
+      </div>
+      <% }); %>
+    </div>
+    <% }); %>
+  </section>
+
+  <section class="rs-section">
+    <h2 class="rs-h2"><span class="rs-num"><%= String(++sec).padStart(2, '0') %></span>教育背景<span class="rs-h2-en">Education</span></h2>
+    <div class="rs-edu">
+      <span class="rs-edu-school"><%= r.education.school %></span>
+      <span class="rs-edu-major"><%= r.education.major %> · <%= r.education.degree %></span>
+      <span class="rs-period"><%= r.education.period %></span>
+    </div>
+    <p class="rs-edu-courses">主修课程：<%= r.education.courses %></p>
+  </section>
+
+  <section class="rs-section rs-section-last">
+    <h2 class="rs-h2"><span class="rs-num"><%= String(++sec).padStart(2, '0') %></span>其他<span class="rs-h2-en">Others</span></h2>
+    <ul class="rs-others">
+      <li><span class="rs-others-key">研究方向</span><%= r.others.research %></li>
+      <li><span class="rs-others-key">证书</span><%= r.others.certificates %></li>
+    </ul>
+  </section>
+
+  </td></tr></tbody>
+  <tfoot class="rs-run rs-run-bottom"><tr><td>
+    <div class="rs-hf rs-hf-bottom">
+      <span><%= h.email %> · <%= h.phone %></span>
+      <span class="rs-hf-meta"><%= h.location %></span>
+    </div>
+  </td></tr></tfoot>
+  </table>
+</article>
+
+<p class="rs-note no-print">
+  打印提示：目标打印机选「另存为 PDF」，并取消勾选浏览器自带的「页眉和页脚」（页面已自带一套，避免重复）；纸张、边距、缩放与页眉页脚按上方设置自动生效，无需在对话框里再调。设置会自动记住，下次打开无需重选。
+</p>
+
+<script>
+(function () {
+  var SIZES = {
+    A4: [210, 297], A3: [297, 420], A5: [148, 210],
+    Letter: [215.9, 279.4], Legal: [215.9, 355.6]
+  };
+  var MARGINS = { '0': 0, '8': 8, '12': 12, '18': 18 };
+  var KEY = 'rs-print-prefs';
+
+  var paperSel = document.getElementById('rs-paper');
+  var scaleSel = document.getElementById('rs-scale');
+  var marginSel = document.getElementById('rs-margin');
+  var hfBox = document.getElementById('rs-hf');
+  var printBtn = document.getElementById('rs-print');
+  var paper = document.querySelector('.rs-paper');
+
+  var styleEl = document.getElementById('rs-print-style');
+  if (!styleEl) {
+    styleEl = document.createElement('style');
+    styleEl.id = 'rs-print-style';
+    document.head.appendChild(styleEl);
+  }
+
+  var dateEl = document.querySelector('.rs-hf-date');
+  if (dateEl) {
+    var d = new Date();
+    dateEl.textContent = d.getFullYear() + '.' + String(d.getMonth() + 1).padStart(2, '0');
+  }
+
+  function apply() {
+    var size = SIZES[paperSel.value] || SIZES.A4;
+    var m = MARGINS[marginSel.value];
+    if (m === undefined) m = 12;
+    var z = parseFloat(scaleSel.value) || 1;
+    var hf = hfBox.checked;
+
+    document.body.classList.toggle('rs-hf-on', hf);
+
+    // 屏幕预览：纸面尺寸与边距与打印保持一致
+    paper.style.setProperty('--rs-w', size[0] + 'mm');
+    paper.style.setProperty('--rs-h', size[1] + 'mm');
+    paper.style.setProperty('--rs-m', m + 'mm');
+
+    // 打印：@page 控制纸张与每页边距（真正逐页生效），zoom 控制内容缩放
+    // 页眉页脚走 thead/tfoot 逐页重复，占正文空间，无需额外预留
+    var side = m === 0 ? 1.2 : m;
+    styleEl.textContent =
+      '@page{size:' + size[0] + 'mm ' + size[1] + 'mm;' +
+        'margin:' + m + 'mm ' + side + 'mm;}' +
+      '@media print{' +
+        '.rs-paper{zoom:' + z + ';}' +
+      '}';
+
+    try { 
+      localStorage.setItem(KEY, JSON.stringify({
+        paper: paperSel.value, scale: scaleSel.value,
+        margin: marginSel.value, hf: hf
+      }));
+    } catch (e) {}
+  }
+
+  try {
+    var saved = JSON.parse(localStorage.getItem(KEY) || 'null');
+    if (saved) {
+      if (saved.paper) paperSel.value = saved.paper;
+      if (saved.scale) scaleSel.value = saved.scale;
+      if (saved.margin !== undefined && saved.margin !== null) marginSel.value = saved.margin;
+      if (typeof saved.hf === 'boolean') hfBox.checked = saved.hf;
+    }
+  } catch (e) {}
+
+  [paperSel, scaleSel, marginSel, hfBox].forEach(function (el) {
+    el.addEventListener('change', apply);
+  });
+
+  printBtn.addEventListener('click', function () {
+    apply();
+    window.print();
+  });
+
+  apply();
+})();
+</script>

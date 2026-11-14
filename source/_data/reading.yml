@@ -1,0 +1,28 @@
+# 最近阅读。status 可选：在读 / 已读 / 想读
+- title: 愿你慢慢长大
+  author: 刘瑜 等
+  status: 在读
+  category: 散文
+  note: 一封写给女儿的信，讲的是「不寄望」这件事有多难又多重要。
+  link: https://weread.qq.com/
+
+- title: 思考，快与慢
+  author: 丹尼尔·卡尼曼
+  status: 在读
+  category: 认知心理学
+  note: 系统一与系统二的分工，正好对照 Agent 的快思考与慢推理。
+  link: ''
+
+- title: 人月神话
+  author: 弗雷德里克·布鲁克斯
+  status: 已读
+  category: 软件工程
+  note: 加人不能加速，本质复杂度无法靠人力摊平。
+  link: ''
+
+- title: 架构整洁之道
+  author: Robert C. Martin
+  status: 已读
+  category: 架构
+  note: 依赖方向决定系统寿命，边界比分层更重要。
+  link: ''

@@ -1,0 +1,45 @@
+<section class="page-head">
+  <h1 class="page-title"><%= page.title %></h1>
+  <% if (page.subtitle) { %><p class="page-subtitle"><%= page.subtitle %></p><% } %>
+</section>
+
+<% if (page.content) { %>
+<section class="page-body"><%- page.content %></section>
+<% } %>
+
+<%
+  const works = site.data.works || [];
+  const featured = works.filter(function (w) { return w.featured; });
+%>
+
+<% if (featured.length) { %>
+<section class="section">
+  <div class="section-head">
+    <h2 class="section-title">代表作<span class="section-en">Featured</span></h2>
+  </div>
+  <div class="card-grid">
+    <% featured.forEach(function (w) { %><%- partial('partials/work-card', { work: w }) %><% }); %>
+  </div>
+</section>
+<% } %>
+
+<section class="section">
+  <div class="section-head">
+    <h2 class="section-title">全部项目<span class="section-en">All Projects</span></h2>
+  </div>
+  <ul class="work-list">
+    <% works.forEach(function (w) { %>
+    <li class="work-row">
+      <div class="work-row-main">
+        <div class="work-row-title"><%= w.title %></div>
+        <div class="work-row-desc"><%= w.summary %></div>
+        <div class="work-row-tags"><% (w.tags || []).forEach(function (t) { %><span class="pill"><%= t %></span><% }); %></div>
+      </div>
+      <div class="work-row-side">
+        <span class="work-row-period"><%= w.period %></span>
+        <% if (w.highlight) { %><span class="work-row-highlight"><%= w.highlight %></span><% } %>
+      </div>
+    </li>
+    <% }); %>
+  </ul>
+</section>

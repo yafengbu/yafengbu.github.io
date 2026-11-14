@@ -1,0 +1,45 @@
+# 精选作品：按重要性排序，首页展示前 3 个（featured: true）
+- title: 多模态训练数据管线与 HPF 框架
+  role: 核心开发（框架层） · 主导（应用侧）
+  period: 2026
+  featured: true
+  tags: [Python, Ray, 多模态, 数据管线]
+  summary: 面向多模态训练数据的处理框架，抽象算子注册与并行调度，支撑多源数据的清洗、对齐与产出。
+  highlight: 算子化封装 + 分布式调度，链路可观测
+  link: ''
+
+- title: 多模态 Agent 文档提取
+  role: 主导（框架设计 + 全链路交付）
+  period: 2024 – 2025
+  featured: true
+  tags: [Agent, 多模态, 文档解析, Function Calling]
+  summary: 面向复杂版式文档的字段抽取 Agent，融合版面理解与工具调用，覆盖表格、印章、手写等难点场景。
+  highlight: F1 +18%，日均处理 6000+ 文档
+  link: ''
+
+- title: 智能问答 Agent
+  role: 主导（框架设计 + 全链路交付）
+  period: 2024 – 2025
+  featured: true
+  tags: [RAG, ReAct, 评测闭环]
+  summary: 基于检索增强与 ReAct 编排的问答系统，配合 Bad Case 闭环与评测集持续优化回答质量。
+  highlight: 任务成功率 76% → 88%
+  link: ''
+
+- title: 领域模型构建（Qwen 微调）
+  role: 核心开发
+  period: 2024 – 2025
+  featured: false
+  tags: [SFT, LoRA, DPO, vLLM]
+  summary: 面向垂直领域的模型微调与部署，覆盖数据构造、训练策略与线上推理优化。
+  highlight: LoRA 微调 + vLLM 推理部署
+  link: ''
+
+- title: 智能客服 Agent（线上应用）
+  role: 独立开发
+  period: 2026
+  featured: false
+  tags: [云服务, RAG, 全栈]
+  summary: 带知识库检索、会话记录与转人工工单的客服 Agent，含管理后台与 FAQ 维护。
+  highlight: 已上线，支持多轮上下文与转人工
+  link: ''

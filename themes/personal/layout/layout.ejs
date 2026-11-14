@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<% const standalone = (page.layout === 'resume'); %>
+<html lang="zh-CN"<%= standalone ? ' class="rs-page"' : '' %>>
+<%- partial('partials/head') %>
+<body class="<%= standalone ? 'rs-standalone' : '' %>">
+  <% if (!standalone) { %><%- partial('partials/header') %><% } %>
+  <main class="<%= standalone ? 'rs-main' : 'container' %>">
+    <%- body %>
+  </main>
+  <% if (!standalone) { %><%- partial('partials/footer') %><% } %>
+</body>
+</html>

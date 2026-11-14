@@ -1,0 +1,22 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><% if (page.title && !is_home()) { %><%= page.title %> · <% } %><%= config.title %></title>
+  <meta name="description" content="<%= page.description || config.description %>">
+  <meta name="theme-color" content="#070b13">
+  <%# 在样式表加载前落定主题：优先用户手动选择，否则跟随系统偏好，避免首屏闪色 %>
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('site-theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') {
+        t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)
+          ? 'light' : 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+      var m = document.querySelector('meta[name="theme-color"]');
+      if (m) m.setAttribute('content', t === 'light' ? '#f6f9fd' : '#070b13');
+    })();
+  </script>
+  <link rel="stylesheet" href="<%- url_for('/css/style.css') %>">
+</head>

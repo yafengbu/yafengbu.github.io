@@ -1,6 +1,7 @@
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="<%- url_for('/') %>">
+      <img class="brand-logo" src="<%- url_for('/images/logo.svg') %>" alt="" aria-hidden="true">
       <span class="brand-name"><%= site.data.profile.name || config.author %></span>
       <span class="brand-sub">Personal Site</span>
     </a>

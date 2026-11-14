@@ -102,18 +102,18 @@ a:hover { color: var(--accent-strong); text-decoration: none; }
 }
 
 .brand { display: flex; align-items: center; gap: 10px; color: var(--text); margin-right: auto; }
-.brand::before {
-  content: "";
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.18), 0 0 12px var(--glow);
-  animation: pulse 3s ease-in-out infinite;
+.brand-logo {
+  width: 27px;
+  height: 27px;
+  flex: none;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px var(--line), 0 2px 8px rgba(1, 4, 10, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-@keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.18), 0 0 10px rgba(88, 166, 255, 0.35); }
-  50% { box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.10), 0 0 20px rgba(88, 166, 255, 0.55); }
+.brand:hover .brand-logo {
+  transform: rotate(-8deg) scale(1.05);
+  box-shadow: 0 0 0 1px rgba(88, 166, 255, 0.4), 0 0 14px rgba(88, 166, 255, 0.28);
 }
 .brand-name { font-size: 15.5px; font-weight: 700; letter-spacing: 0.3px; }
 .brand-sub {
@@ -842,6 +842,14 @@ html[data-theme="light"] .tt-moon { color: var(--muted); opacity: 0.6; }
   align-items: center;
   gap: 4px;
   flex-wrap: wrap;
+}
+
+.footer-logo {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  vertical-align: -4px;
+  opacity: 0.9;
 }
 .footer-inner a { color: var(--muted); }
 .footer-inner a:hover { color: var(--accent-strong); }

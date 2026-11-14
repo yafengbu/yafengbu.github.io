@@ -9,7 +9,7 @@
   <div class="hero-inner">
     <div class="hero-avatar-wrap">
       <% if (p.avatar) { %>
-      <img class="hero-avatar" src="<%- url_for(p.avatar) %>" alt="<%= p.name %>">
+      <img class="hero-avatar" src="<%- url_for(p.avatar_home || p.avatar) %>" alt="<%= p.name %>">
       <% } else { %>
       <div class="hero-avatar hero-avatar-fallback"><%= (p.name || 'B').charAt(0) %></div>
       <% } %>

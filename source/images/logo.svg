@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#58a6ff"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="wg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e4f2ff"/>
+      <stop offset="1" stop-color="#8fd3ff"/>
+    </linearGradient>
+    <!-- 光环中段藏到「风」字后方 -->
+    <mask id="behind">
+      <rect x="0" y="0" width="64" height="64" fill="#fff"/>
+      <rect x="15" y="10" width="34" height="46" rx="17" fill="#000"/>
+    </mask>
+  </defs>
+  <!-- 深空底 -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="#0b1424"/>
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="none" stroke="url(#lg)" stroke-opacity="0.45" stroke-width="1.5"/>
+  <!-- 星轨光环：两侧探出，中段被「风」字遮挡 -->
+  <g mask="url(#behind)">
+    <ellipse cx="32" cy="33" rx="22" ry="8" fill="none" stroke="url(#lg)" stroke-width="2.6"
+             stroke-linecap="round" transform="rotate(-18 32 33)"/>
+  </g>
+  <!-- 主体：「风」字 -->
+  <text x="32" y="43" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif"
+        font-size="30" font-weight="700" fill="url(#wg)">风</text>
+  <!-- 星点 -->
+  <circle cx="49" cy="17.5" r="2.2" fill="#7dd3fc"/>
+  <circle cx="13.5" cy="46" r="1.5" fill="#22d3ee" opacity="0.85"/>
+</svg>

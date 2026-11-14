@@ -1,5 +1,6 @@
 <footer class="site-footer">
   <div class="footer-inner">
+    <img class="footer-logo" src="<%- url_for('/images/logo.svg') %>" alt="" aria-hidden="true">
     <span>© <%= date(new Date(), 'YYYY') %> <%= site.data.profile.name || config.author %></span>
     <span class="dot">·</span>
     <span>Built with <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a></span>

@@ -1,0 +1,160 @@
+# 简历数据（取自 resume/卜亚风简历-AI应用开发工程师.md，2026-09-23 版）
+# 独立页面：/resume/，样式 = 极简科技风（等宽标签 + 编号章节 + 细线分隔）
+
+header:
+  name: 卜亚风
+  en_name: BU YAFENG
+  role: AI 应用开发工程师 / AI Agent 开发工程师
+  email: 751019439@qq.com
+  phone: +86 15029074256
+  location: 深圳 ｜ 西安
+  years: 9 年+
+  job_intent: AI 应用开发工程师 / AI Agent 开发工程师
+
+summary: 9 年+ 软件开发经验，自 2023 年起专注大模型与 Agent 应用端到端落地，具备「数据清洗 → Prompt 工程 → 微调对齐 → vLLM 部署 → 评测回归」全链路交付能力；主导 RAG、Agent 编排、Function Calling 工具化与评测闭环在真实业务稳定交付，注重生产环境可观测性与稳定性；深度使用 Cursor 构建 AI 原生研发流程。
+
+highlights:
+  - key: Agent 编排与评测闭环
+    text: 自研任务拆解 + DAG 并行调度 + 反思容错，问答成功率 88%+
+  - key: 多模态 RAG 与工具化
+    text: 文档信息提取 Agent 日均处理 6000+ 文档，关键信息定位准确率 95%+
+  - key: 大模型服务化与工具接入
+    text: 标准 API 封装对接低代码平台，上线 10+ 内部应用场景，数据管线微服务 SLA 99%+
+  - key: 平台化与 AI 提效
+    text: HPF 沉淀 5 大模态算子库支撑多模态训练，Cursor 深度使用，沉淀 10+ 开发 Skills
+
+skill_tags: Python ｜ FastAPI ｜ Agent ｜ RAG ｜ Function Calling ｜ vLLM ｜ Langfuse ｜ OpenCompass ｜ LoRA ｜ Faiss ｜ Qwen-VL ｜ Ray Data ｜ PySpark ｜ Iceberg ｜ Pulsar ｜ FFmpeg ｜ Cursor ｜ Docker
+
+skills:
+  - group: Agent 工程与工具编排
+    text: 自研 Agent 链路（任务拆解 → DAG 并行调度 → 反思容错 → 状态管理）；Function Calling 工具封装（与 MCP 范式同源、可迁移标准 MCP Server）
+  - group: RAG 与多模态
+    text: 掌握 RAG 全链路（多模态 Embedding、Faiss 检索、版面感知解析、智能切块）；有 Qwen-VL 多模态理解与 i2v / t2v Caption 打标落地经验
+  - group: 评测与可观测
+    text: 基于 OpenCompass 评测框架构建自动化评估流程（规则校验 + LLM-as-Judge）；Langfuse trace 归因失败、Bad Case 库驱动迭代
+  - group: 后端工程与 AI 工具链
+    text: 精通 Python 异步与 FastAPI 微服务；熟悉 vLLM 部署、了解 LangChain 框架设计思想；熟练 SQL / Pandas / NumPy；具 Docker 与 Linux 稳定性保障；Cursor 深度使用
+  - group: 分布式与数据工程
+    text: 熟练 PySpark / Ray 分布式计算；熟悉 Iceberg / Pulsar / 腾讯云 COS 数据流转；具备 FFmpeg 视频与大规模非结构化数据批处理经验
+
+experience:
+  - company: 腾讯智研（重庆）科技发展有限公司深圳分公司
+    dept: 腾讯 TEG / AI Data 部
+    role: AI 数据工程
+    period: 2026.02 – 2026.07
+    bullets:
+      - 负责混元多模态训练数据管线建设，覆盖数据清洗、标注、存储与分发全流程，保障语料高效稳定交付；
+      - 参与多模态分布式批处理管线框架（HPF）建设，沉淀可复用算子与 API；
+      - 搭建多模态数据自动化处理与打标流水线，支撑大模型训练语料规模化生产。
+  - company: 上海科之锐人才咨询有限公司深圳分公司
+    dept: 华为 OD
+    role: AI 应用开发
+    period: 2024.05 – 2025.12
+    bullets:
+      - 参与 AI 中台建设，主导智能问答 Agent / 多模态文档 Agent / 领域模型工程化三个核心项目工程化落地，覆盖 RAG、Agent 编排、Function Calling 等；
+      - 协同算法与产品团队推动 AI 能力通过低代码平台产品化，支撑 5+ 核心业务场景、上线 10+ 内部应用场景，对长期可用性与效果回归负责；
+      - 主导自动化数据清洗 pipeline 与评估微服务建设，日均 50 万+ 条，保障训练数据规模化供给与管线高可用（SLA 99%+）。
+  - company: 亿达信息技术（深圳）有限公司
+    dept: 腾讯 PCG / 大数据平台部
+    role: 数据挖掘 & 平台开发
+    period: 2019.03 – 2024.03
+    bullets:
+      - 参与业务安全平台「星迹」建设与安全策略开发，平台年度减损 9000 万+；
+      - 2023 年起推动大模型在数据分析场景落地（商业化标签抽取、对话式分析引擎），准确率达 90%+。
+  - company: 中软国际科技服务有限公司
+    dept:
+    role: Python 开发
+    period: 2017.02 – 2019.02
+    bullets:
+      - 独立完成网管产品 U2000 模拟器开发（模拟基站与网管交互），并全栈交付模拟器版本管理 Web 平台，支持远程维护与对外租赁。
+
+project_groups:
+  - group: 一、AI Agent 与大模型应用
+    items:
+      - name: 智能问答 Agent 系统
+        role: 主导（框架设计 + 全链路交付）
+        period: 2024.06 – 2025.12
+        stack: Agent ｜ RAG ｜ Prompt 设计 ｜ DAG 调度 ｜ Self-Reflection ｜ Langfuse
+        desc: 自研企业级智能问答 Agent，通过任务拆解 + DAG 并行调度 + RAG 检索增强 + 反思容错，解决复杂多跳问答的回答准确性与系统效率问题。
+        bullets:
+          - 任务拆解：基于 Understanding 模型设计 Prompt，将用户输入自动拆解为带依赖关系的 DAG 子任务，支持搜索 / 蒸馏 / 总结等类型子任务动态识别，拆解准确率 92%+
+          - DAG 并行调度：自研轻量级 DAG 调度器，并行执行无依赖节点，子任务封装为标准单元（Query 改写 → 搜索规划 → 搜索 → 相关性判别 → 召回相关内容），并管理上下文与中间状态；相比串行方案平均响应时间降低 42%+
+          - 反思容错：子任务召回为空触发一轮 Self-Reflection 回退到重新规划检索，使问答成功率从 76% 提升至 88%
+          - 工具化封装：以自研标准 API 承载工具调用，搜索 / 蒸馏抽象为可注册工具单元，与 MCP 范式同源可迁移标准 Server
+          - 总结与后处理：设计 Prompt 模板引导 LLM 整合多源召回内容并去冗，输出带引用依据的回答；后处理校验（安全过滤 / 格式增强 / 免责声明）保障可靠性
+          - 评测闭环：基于 OpenCompass 框架，以任务成功率为核心指标构建评测集与自动化评测流程，结合 Langfuse trace 归因失败并沉淀 Bad Case 库驱动版本迭代
+      - name: 多模态文档 Agent - 关键信息提取
+        role: 主导
+        period: 2025.02 – 2025.12
+        stack: Qwen-VL ｜ RAG ｜ Faiss ｜ FastAPI（异步）｜ Langfuse ｜ Function Calling
+        desc: 构建支持 PDF / Word / PPT 的文档解析 Agent，融合多模态理解、RAG 与工具调用，自动提取关键字段（金额、签署方、签名、日期）输出 JSON / Markdown，服务于财务、运营商等自动化流程场景。
+        bullets:
+          - 文档解析：结合开源工具与 OCR 实现版面感知解析，提取文本 / 图像 / 页眉页脚 / 手写签名等元信息，输出结构化 JSON 保留语义
+          - 多模态 RAG：基于 langchain_text_splitters 做长文本智能切块，文本与图片特征向量存入 Faiss 做 Top-K 召回，对比纯文本 RAG 关键信息定位 F1 提升 18%
+          - 结构化输出：固定格式 Prompt 引导 Qwen-VL 输出 JSON / Markdown 结构文本，引入后处理校验机制（正则 / 枚举约束）确保字段合规
+          - 工具化封装：将文档解析 / 字段抽取 / 校验能力封装为 Agent 可调的标准工具，统一入参 Schema 与结构化返回，对接 Qwen-VL 完成版面理解与字段定位
+          - 异步微服务：基于 FastAPI + Uvicorn + HTTPX 构建全链路异步 API，支持高并发文档上传与异步结果轮询，日均处理 6000+ 文档，支撑华为 GTS 与三大运营商等核心业务
+          - Bad Case 闭环：集成 Langfuse 对关键环节 trace 级埋点实现链路可视化，结合反馈沉淀 Bad Case 迭代模型与 Prompt
+      - name: 领域模型构建与工具化封装
+        role: 主导
+        period: 2024.05 – 2025.12
+        stack: Qwen ｜ SFT / LoRA / DPO ｜ vLLM ｜ Function Calling ｜ FastText ｜ MinHash ｜ ROUGE / BLEU
+        desc: 基于 Qwen 系列模型构建跨业务线领域大模型（通用 + 垂直），实现从业务数据到可调用 AI 技能的端到端交付，以标准工具接口通过低代码平台赋能非技术用户。
+        bullets:
+          - 工具标准化封装：基于 vLLM 封装标准 API，将模型能力抽象为可注册工具（工具名 + JSON Schema 入参 + 结构化返回），对接低代码平台支持拖拽编排 AI 技能，上线 10+ 内部应用场景
+          - 数据工程：设计自动化清洗 pipeline（TB 级拉取 → 规则清洗 → FastText 知识密度打分 → 模型质检过滤 → MinHash 去重），日均 50 万+ 条，SLA 99%+
+          - 高效微调与部署：采用 LoRA 微调 + DPO 对齐人类偏好，提升领域术语理解准确率；基于 vLLM 部署推理服务并集成到低代码平台
+          - 评估体系：支持数据集上传自动计算 Perplexity / ROUGE / BLEU 与业务指标（术语覆盖率、合规性），评估结果自动同步至数据管理平台
+  - group: 二、多模态数据管线与数据管线框架
+    items:
+      - name: 混元数据管线框架（HPF）
+        role: 核心开发（框架层）
+        period: 2026.02 – 2026.07
+        stack: Ray Data ｜ PySpark ｜ Iceberg ｜ Pulsar ｜ 腾讯云 COS ｜ vLLM ｜ Cursor
+        desc: 面向多模态大模型训练数据处理的底层核心管线框架，基于 Ray Data 构建分布式批处理流水线，为视频、音频、图像、3D 及文本等海量数据提供清洗、打标、编码、去重等全链路处理能力。
+        bullets:
+          - 分布式引擎与异构调度：基于 Ray Data 设计 DAG 批处理引擎，支持 YAML 配置驱动、CPU / GPU 异构调度与 Local / Ray Data / Ray Actor 多后端无缝切换
+          - 五大模态算子库：构建视频 / 图像 / 音频 / 文本 / 3D 标准化算子库，实现 @operator_register 一键注册与自动发现；集成 vLLM 加速的批推理算子 RayDataVLLMOp
+          - 数据契约与高可用：设计 I/O Schema 契约机制（构建与运行时双重校验）+ 14 种 Expectation 校验规则 + QualityCheckpoint 机制，打通配置中心实现 Batch 级参数热更新
+          - API 工具链与 AI 提效：开发结构化 API 与 CLI 工具对接上层数据平台；深度集成 Cursor AI Agent，沉淀 10+ 开发 Skills，实现从脚手架到 CI / CD 自动发版的 AI 原生工作流
+      - name: 混元多模态数据处理管线
+        role: 主导
+        period: 2026.02 – 2026.06
+        stack: PySpark ｜ Ray ｜ FFmpeg ｜ Qwen-VL ｜ Iceberg ｜ Pulsar ｜ MongoDB
+        desc: 负责混元多模态训练数据的工程化管线建设，覆盖文本、图像、视频、3D 等数据的清洗、标注、存储与分发全链路自动化，保障训练语料高效、稳定、可扩展供给。
+        bullets:
+          - 数据管线工程化：构建文本、图像、视频、3D 多模态数据的清洗、标注、存储与分发自动化流水线，依托 PySpark 分布式批处理与 Iceberg 分层存储
+          - 自动化流转监控：搭建基于 Pulsar 的管线自动化流转与监控机制，实时跟踪多环节状态，保障交付时效与稳定性
+          - 大规模批量重处理：依托 PySpark 批处理完成大规模存量数据回刷与批量重处理任务，按时高质量交付
+          - 性能与并发优化：针对存储与并发瓶颈设计可扩展架构（Ray 异构调度 + MongoDB 元数据管理）；基于 Qwen-VL 自动打标推动数据生产自动化
+  - group: 三、早期工程经历
+    items:
+      - name: 大模型场景落地
+        role: 负责数据清洗 / 模型选型 / Prompt 与微调迭代
+        period: 2023.03 – 2024.03
+        stack: ''
+        desc: 商业化标签抽取与对话式数据分析引擎，准确率达 90%+。
+        bullets: []
+      - name: 星迹 · 业务安全风控平台
+        role: 接入层策略判定开发 / 风险可视化看板
+        period: 2019.03 – 2023.02
+        stack: ''
+        desc: 一站式安全运营平台（账户 / 营销 / 内容生态安全 / 反赌反诈），年度减损 9000 万+。
+        bullets: []
+      - name: 模拟器开发及版本管理
+        role: 独立开发
+        period: 2017.02 – 2019.02
+        stack: ''
+        desc: 模拟基站与网管交互，响应 U2000 下发请求并主动发送原语；全栈开发版本管理 Web 平台，支持远程维护与对外租赁。
+        bullets: []
+
+education:
+  school: 西安邮电大学
+  major: 智能科学与技术
+  degree: 学士
+  period: 2013.09 – 2017.07
+  courses: 机器学习、模式识别、自然语言理解、算法设计与分析、概率论与随机过程、计算机网络等
+
+others:
+  research: 大模型应用 ｜ Agent 与工作流编排 ｜ Agent 评测与可靠性 ｜ AI 服务高可用架构
+  certificates: PMP 项目管理认证

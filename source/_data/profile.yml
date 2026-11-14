@@ -1,0 +1,59 @@
+# 站点主人信息（首页 Hero + 关于我页面共用）
+name: 卜亚风
+en_name: Bu Yafeng
+avatar: /images/avatar.jpg
+avatar_home: /images/hero-avatar.jpg
+role: AI 应用开发工程师 · AI Agent 开发工程师
+tagline: 9 年+ 工程经验，3 年专注 AI 应用工程化落地
+location: 深圳
+email: your-email@example.com
+github: https://github.com/yourname
+resume: /resume.pdf
+
+# 首页一句话自我介绍
+intro: >-
+  做 AI 应用与 Agent 的工程化落地：从数据管线、模型微调到检索增强与
+  Agent 编排，把 Demo 做成能上线、可评测、有人用的系统。
+
+# 当前状态（首页小条）
+now:
+  - label: 在做
+    text: 多模态训练数据管线与 HPF 框架
+  - label: 在学
+    text: LangChain 1.0 / LangGraph 生态
+  - label: 在找
+    text: AI 应用开发 / AI Agent 开发 岗位
+
+# 技能分组（关于我页面）
+skills:
+  - group: AI 应用
+    items: [Agent 设计, RAG 架构, Function Calling, Prompt 工程, 评测与可观测]
+  - group: 模型工程
+    items: [Qwen SFT, LoRA, DPO, vLLM 部署, OpenCompass 评测]
+  - group: 数据与平台
+    items: [Python, FastAPI, Ray, PySpark, Iceberg, Pulsar, Faiss]
+  - group: 工程工具
+    items: [Docker, Git, Linux, FFmpeg, Langfuse, Cursor / Claude Code]
+
+# 工作经历（关于我页面时间线）
+timeline:
+  - period: 2026.02 – 2026.07
+    company: 腾讯智研（重庆）科技发展有限公司深圳分公司
+    dept: 腾讯 TEG · AI Data 部
+    role: AI 数据工程
+    desc: 多模态训练数据管线建设与数据质量治理。
+  - period: 2024.05 – 2025.12
+    company: 上海科之锐人才咨询有限公司深圳分公司
+    dept: 华为 OD
+    role: AI 应用开发
+    desc: 多模态文档提取 Agent、智能问答 Agent 的框架设计与交付。
+  - period: 2019.03 – 2024.03
+    company: 亿达信息技术（深圳）有限公司
+    dept: 腾讯 PCG · 大数据平台部
+    role: 数据挖掘 & 平台开发
+    desc: 大数据平台开发、业务安全风控、数据挖掘工程。
+  - period: 2017.02 – 2019.02
+    company: 中软国际科技服务有限公司
+    dept:
+    role: Python 开发
+    desc: 服务端开发与模拟器版本管理。

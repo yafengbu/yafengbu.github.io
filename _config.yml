@@ -2,9 +2,11 @@
 ## Docs: https://hexo.io/docs/configuration.html
 
 # Site
-title: 卜亚风
+title: 南薰小站
+# 站点英文名（页眉副名与页脚版权使用）
+en_title: Nanxun Site
 subtitle: 'AI 应用开发工程师 · 个人网站'
-description: '卜亚风的个人网站：AI 应用开发与 Agent 工程实践、精选作品、阅读与简历'
+description: '南薰小站 - 个人网站：AI 应用开发与 Agent 工程实践、精选作品、阅读与简历'
 keywords: AI, Agent, RAG, LLM
 author: Yafeng Bu
 language: zh-CN

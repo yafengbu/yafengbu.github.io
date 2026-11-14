@@ -2,7 +2,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><% if (page.title && !is_home()) { %><%= page.title %> · <% } %><%= config.title %></title>
-  <meta name="description" content="<%= page.description || config.description %>">
+  <% const _owner = (site.data.profile || {}).name || config.author; %>
+  <meta name="description" content="<%= page.description || (config.title + '——' + _owner + '的个人网站：' + config.description) %>">
   <meta name="theme-color" content="#070b13">
   <%# 在样式表加载前落定主题：优先用户手动选择，否则跟随系统偏好，避免首屏闪色 %>
   <script>

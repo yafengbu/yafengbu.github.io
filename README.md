@@ -1,6 +1,8 @@
-# 个人网站（Hexo + GitHub Pages）
+# 南薰小站（Hexo + GitHub Pages）
 
-个人网站
+> **南薰小站** - 个人网站（Hexo + GitHub Pages）
+>
+> 名字取自《南风歌》「南风之薰兮，可以解吾民之愠兮」。
 
 ## 本地预览
 
@@ -11,28 +13,28 @@ npx hexo server  # http://localhost:4000
 
 ## 内容怎么维护（无需碰模板）
 
-| 想改什么                                  | 改哪里                                                                                              |
-| ----------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| 姓名 / 简介 / 邮箱 / GitHub / 技能 / 经历 | `source/_data/profile.yml`                                                                          |
-| 精选作品（增删改项目卡片）                | `source/_data/works.yml`（`featured: true` 上首页）                                                 |
-| 阅读书单（在读 / 已读 / 想读）            | `source/_data/reading.yml`                                                                          |
-| 写博客文章                                | `npx hexo new post "标题"`，然后编辑 `source/_posts/`                                               |
-| 板块页面文案                              | `source/about/index.md`、`source/works/index.md`、`source/reading/index.md`、`source/blog/index.md` |
+| 想改什么                                  | 改哪里                                                       |
+| ----------------------------------------- | ------------------------------------------------------------ |
+| 姓名 / 简介 / 邮箱 / GitHub / 技能 / 经历 | `source/_data/profile.yml`                                   |
+| 精选作品（增删改项目卡片）                | `source/_data/works.yml`（`featured: true` 上首页）          |
+| 阅读书单（在读 / 已读 / 想读）            | `source/_data/reading.yml`                                   |
+| 写博客文章                                | `npx hexo new post "标题"`，然后编辑 `source/_posts/`        |
+| 板块页面文案                              | 博客  `source/blog/index.md`<br />作品 `source/works/index.md`、<br />阅读 `source/reading/index.md`、<br />关于 `source/about/index.md` |
 
 ## 目录结构
 
 ```
 personal-site/
-├── _config.yml                  # 站点配置（title/url/theme: personal）
+├── _config.yml                    # 站点配置（title/url/theme: personal）
 ├── source/
-│   ├── _data/                   # 内容数据层（profile / works / reading / resume）
-│   ├── _posts/                  # 博客文章
-│   ├── about|blog|works|reading/# 四个板块页面
-│   ├── resume/                  # 独立简历页（不套站点导航）
-├── themes/personal/             # 自研主题
-│   ├── layout/                  # EJS 模板（index/blog/works/reading/about/post/page）
-│   └── source/css/style.css     # 单色样式表
-└── .github/workflows/deploy.yml # GitHub Actions 自动部署
+│   ├── _data/                     # 内容数据层（profile / works / reading / resume）
+│   ├── _posts/                    # 博客文章
+│   ├── about|blog|works|reading/  # 四个板块页面
+│   ├── resume/                    # 独立简历页（不套站点导航）
+├── themes/personal/               # 自研主题
+│   ├── layout/                    # EJS 模板（index/blog/works/reading/about/post/page）
+│   └── source/css/style.css       # 单色样式表
+└── .github/workflows/deploy.yml   # GitHub Actions 自动部署
 ```
 
 ## 发布到 GitHub Pages
